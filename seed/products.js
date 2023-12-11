@@ -100,7 +100,7 @@ const carBrandsAndModels = [
 const Parts = [ "Front Bumper", "Front Lights", "Rear Bumper", "Rear Lights", ]
 
 const years = Array.from({ length: 17 }, (_, i)=> new Date().getFullYear() - i)
-const addProducts = async (products)=> {
+const addProducts = async ()=> {
   const brands = carBrandsAndModels.map((b)=> b.brand)
   
   for (const part of Parts) {
@@ -138,22 +138,6 @@ const addProducts = async (products)=> {
     }
   }
 }
-// const addProducts = async (products)=> {
-//   let index = 0
-
-//     setInterval(async ()=> {
-//       await addProduct(products[index]);
-//       index++
-//     }, 100)
-// }
-
-
-// _id
-// description
-// availableBrands
-// category
-// subCategory
-// deliveryDays
 
 const ADD_PRODUCT = `
     mutation createProduct(
@@ -222,38 +206,7 @@ const addProduct = async (data)=> {
 
 
 
-// _id: ID
-// name: String
-// description: String
-// brand: String
-// price: Float
-// discount: Float
-// category: String
-// subCategory: String
-// deliveryDays: Int
-
-
-// const prices = [ 10000, 20000, 25000, 50000, 50000, 40000, 45000 ]
-
-// const products =  carBrandsAndModels.flatMap(({ brand, models })=> {
-
-//   return models.flatMap((model)=> {
-
-
-//     return carParts.flatMap(({ location, ...rest })=> {
-//       const price = prices[Math.floor(Math.random() * prices.length)]
-  
-//       return [ 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 ].flatMap((year)=> {
-  
-//         return { ...rest, price, brand, year, model, }
-//       })
-//     })
-//   })
-// })
-
-// console.log("add products ", products)
-
-addProducts([])
+addProducts()
     .then((res)=> {
 
         console.log('====================================');
