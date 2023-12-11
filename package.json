@@ -1,0 +1,38 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cp ./src/.env ./build/.env & cp ./src/firebaseConfig.json ./build/firebaseConfig.json & tsc --watch & nodemon ./build/index.js",
+    "start": "node ./build/index.js",
+    "dev-old": "nodemon ./src/index.ts",
+    "build": "tsc -p .",
+    "deploy": "yarn build && serverless deploy"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^20.4.9",
+    "bcryptjs": "^2.4.3",
+    "buffer": "^6.0.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "firebase-admin": "^11.10.1",
+    "graphql": "^16.7.1",
+    "graphql-playground-middleware-express": "^1.7.23",
+    "jsonwebtoken": "^9.0.1",
+    "moment": "^2.29.4",
+    "mongoose": "^7.4.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.4",
+    "serverless-http": "^3.2.0",
+    "typescript": "^5.1.6",
+    "validator": "^13.11.0"
+  }
+}
